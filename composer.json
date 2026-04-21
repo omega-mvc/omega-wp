@@ -1,5 +1,5 @@
 {
-    "name": "omega/omega-wp",
+    "name": "omega-mvc/omega-wp",
     "description": "Task Manager description",
     "version": "1.0.0",
     "type": "wordpress-plugin",
