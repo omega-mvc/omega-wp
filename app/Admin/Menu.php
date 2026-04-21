@@ -9,7 +9,7 @@ defined( 'ABSPATH' ) || exit;
 class Menu extends MenuBuilder {
 	public function register() {
 		$menu = $this
-			->add( 'acme-task-manager', __( 'Task Manager', 'acme-task-manager' ) )
+			->add( 'omega-wp', __( 'Task Manager', 'omega-wp' ) )
 			->icon( 'dashicons-lightbulb' )
 			->capability( 'manage_options' );
 	}

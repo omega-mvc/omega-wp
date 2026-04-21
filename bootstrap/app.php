@@ -4,6 +4,6 @@ declare(strict_types=1);
 
 use Omega\Omega;
 
-Omega::init( 'acme-task-manager', [
+Omega::init( 'omega-wp', [
     'base_path' => dirname(__DIR__),
 ] );

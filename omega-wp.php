@@ -11,7 +11,7 @@ declare(strict_types=1);
  * Requires at least: 6.0
  * Requires PHP: 7.4
  * Author: Your Name
- * Text Domain: acme-task-manager
+ * Text Domain: omega-wp
  * License: GPLv2 or later
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
  */
