@@ -2,7 +2,7 @@
 
 namespace App\Providers;
 
-use Omega\Support\ServiceProvider;
+use Omega\Container\ServiceProvider;
 
 use App\Admin\Setup;
 

@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\TaskController;
-use Omega\Facades\Route;
+use Omega\Routing\Facade\Route;
 
 defined('ABSPATH') || exit;
 
