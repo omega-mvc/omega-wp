@@ -18,6 +18,12 @@ declare(strict_types=1);
 
 defined( 'ABSPATH' ) || exit;
 
+/**const OMEGA_BOOTSTRAP_FILE = __FILE__;
+
+require_once ABSPATH . 'wp-admin/includes/plugin.php';
+
+$data = get_plugin_data(OMEGA_BOOTSTRAP_FILE);*/
+
 require plugin_dir_path(__FILE__) . 'vendor/autoload.php';
 
 require plugin_dir_path(__FILE__) . 'bootstrap/app.php';

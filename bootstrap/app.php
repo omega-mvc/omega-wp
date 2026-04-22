@@ -2,8 +2,10 @@
 
 declare(strict_types=1);
 
-use Omega\Omega;
+use Omega\Application\Application;
 
-Omega::init( 'omega-wp', [
-    'base_path' => dirname(__DIR__),
-] );
+$app = new Application(dirname(__DIR__), 'omega-wp');
+
+$app->bootstrap();
+
+return $app;
