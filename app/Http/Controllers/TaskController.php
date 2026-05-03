@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Omega\Routing\Controller;
+use Omega\Routing\AbstractController;
 
 defined( 'ABSPATH' ) || exit;
 
-class TaskController extends Controller {
+class TaskController extends AbstractController {
 
 	/**
 	 * Display a listing of the resource.

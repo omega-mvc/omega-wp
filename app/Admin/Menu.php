@@ -2,11 +2,11 @@
 
 namespace App\Admin;
 
-use Omega\Admin\Menu\MenuBuilder;
+use Omega\Admin\Menu\AbstractMenuBuilder;
 
 defined( 'ABSPATH' ) || exit;
 
-class Menu extends MenuBuilder {
+class Menu extends AbstractMenuBuilder {
 	public function register() {
 		$menu = $this
 			->add( 'omega-wp', __( 'Task Manager', 'omega-wp' ) )
