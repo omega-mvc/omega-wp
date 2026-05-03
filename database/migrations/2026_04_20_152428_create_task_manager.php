@@ -1,12 +1,12 @@
 <?php
 
-use Omega\Database\Migrations\Migration;
+use Omega\Database\Migrations\AbstractMigration;
 use Omega\Database\Schema\Blueprint;
 use Omega\Database\Schema\Schema;
 
 defined( 'ABSPATH' ) || exit;
 
-return new class extends Migration {
+return new class extends AbstractMigration {
 	/**
 	 * Run the migrations.
 	 */

@@ -2,15 +2,15 @@
 
 namespace App\Models;
 
-use Omega\Database\Eloquent\Model;
+use Omega\Database\Eloquent\AbstractModel;
 
 defined( 'ABSPATH' ) || exit;
 
-class Task extends Model {
+class Task extends AbstractModel {
 
 	/**
 	 * Indicates if the model should be timestamped.
 	 */
-	public $timestamps = true;
+	public bool $timestamps = true;
 
 }
