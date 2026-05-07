@@ -1,9 +1,15 @@
 <?php
 
-defined( 'ABSPATH' ) || exit;
+declare(strict_types=1);
 
 return [
-	// Admin Classes
-	'admin_menu_class' => 'App\Admin\Menu::class',
-	'admin_setup_class' => 'App\Admin\Setup::class',
+    'admin'       => [
+        'menu'  => App\Admin\Menu::class,
+        'setup' => App\Admin\Setup::class
+    ],
+
+    'translation' => [
+        'type'   => 'theme', // theme o plugin, poi ti spiego
+        'enable' => true
+    ],
 ];
