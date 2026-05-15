@@ -2,13 +2,11 @@
 
 declare(strict_types=1);
 
-use Omega\Application\Application;
+use Omega\Application\ApplicationFactory;
 
-$app = new Application(
-    config: ['base_path' => dirname(__DIR__)],
-    id: 'omega-wp'
+$app = ApplicationFactory::create(
+    id: 'omega-wp',
+    config: ['base_path' => dirname(__DIR__)]
 );
-
-$app->bootstrap();
 
 return $app;
