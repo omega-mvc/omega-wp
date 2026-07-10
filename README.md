@@ -8,9 +8,9 @@
 <p align="center">
     <a href="https://omega-mvc.github.io">Documentation</a> |
     <a href="https://github.com/omega-mvc/omega-mvc.github.io/blob/main/README.md#changelog">Changelog</a> |
-    <a href="https://github.com/omega-mvc/omega/blob/main/CONTRIBUTING.md">Contributing</a> |
-    <a href="https://github.com/omega-mvc/omega/blob/main/CODE_OF_CONDUCT.md">Code Of Conduct</a> |
-    <a href="https://github.com/omega-mvc/omega/blob/main/LICENSE">License</a>
+    <a href="https://github.com/omega-mvc/omega-wp/blob/main/CONTRIBUTING.md">Contributing</a> |
+    <a href="https://github.com/omega-mvc/omega-wp/blob/main/CODE_OF_CONDUCT.md">Code Of Conduct</a> |
+    <a href="https://github.com/omega-mvc/omega-wp/blob/main/LICENSE">License</a>
 </p>
 -->
 
@@ -139,3 +139,14 @@ Run code analysis:
 ```bash
 vendor/bin/phpcs
 ```
+## Official Documentation
+
+The official documentation for Omega is available [here](https://omega-mvc.github.io)
+
+## Contributing
+
+If you'd like to contribute to the Omega example application package, please follow our [contribution guidelines](CONTRIBUTING.md).
+
+## License
+
+This project is open-source software licensed under the [GNU General Public License v3.0](LICENSE).
