@@ -2,7 +2,7 @@
     "name": "omega-mvc/omega-wp",
     "type": "wordpress-plugin",
     "version": "1.0.0",
-    "description": "Task Manager description",
+    "description": "Composer description\n\nA modern WordPress application example built with Omega WP Framework. Provides an MVC-based structure with dependency injection, service providers, routing, controllers, validation, and Laravel Eloquent database integration.",
     "homepage": "https://omega-mvc.github.io",
     "license": "GPL-3.0+",
     "authors": [
