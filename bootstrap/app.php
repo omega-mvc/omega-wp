@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 use Omega\Application\ApplicationFactory;
 
-$app = ApplicationFactory::create(
+$app = ApplicationFactory::createPlugin(
     id: 'omega-wp',
-    config: ['base_path' => dirname(__DIR__)]
+    basePath: dirname(__DIR__)
 );
 
 return $app;
