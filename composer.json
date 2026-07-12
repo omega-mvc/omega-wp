@@ -23,7 +23,7 @@
     ],
     "require": {
         "php": "^8.4",
-        "omega-mvc/wp-framework": "^1.0.0",
+        "omega-mvc/omega-wp-framework": "^1.0.0",
         "symfony/console": "^8.0",
         "symfony/finder": "^8.0"
     },
