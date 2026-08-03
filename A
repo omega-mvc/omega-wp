@@ -1,0 +1,9 @@
+Oggi iniziamo a riesamnare ogni componente del framework. Lo scopo è quello di separare nettamente ogni singola riga di codice
+in
+
+- Responsabilità generica (potrebbe funzionare con qualsiasi codice php, anche fuori da WordPress)
+- Esclusivo di WordPress (senza WordPress non funziona)
+- Relativo a WordPress
+
+Iniziamo dal pacchetto Application.
+

@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use Omega\Database\Eloquent\AbstractModel;
+use Omega\Database\ORM\AbstractModel;
 
 defined( 'ABSPATH' ) || exit;
 
