@@ -1,0 +1,16 @@
+#!/usr/bin/env php
+<?php
+
+use Omega\Console\ConsoleApplication;
+
+require dirname(__FILE__, 4) . '/wp-load.php';
+
+require_once './vendor/autoload.php';
+
+$app = require_once __DIR__ . '/bootstrap/app.php';
+
+$out = $app->resolve(ConsoleApplication::class);
+
+$handle = $out->handle($argv);
+
+exit($handle);

@@ -6,8 +6,6 @@ use Omega\Container\ServiceProvider;
 
 use App\Admin\Setup;
 
-defined( 'ABSPATH' ) || exit;
-
 class AppServiceProvider extends ServiceProvider {
 	/**
 	 * Register any application services.
