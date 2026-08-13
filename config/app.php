@@ -5,15 +5,15 @@ declare(strict_types=1);
 use function Omega\Environment\env;
 
 return [
-	'environment' => env('APP_ENV', ''),
-	'debug'       => env('APP_DEBUG', ''),
+	'environment' => env('APP_ENV', 'production'),
+	'debug'       => env('APP_DEBUG', false),
 	'admin' => [
 		'menu'  => App\Admin\Menu::class,
 		'setup' => App\Admin\Setup::class
 	],
 
 	'translation' => [
-		'type'   => 'plugin', // theme o plugin, poi ti spiego
-		'enable' => true
+		'type'   => env('APP_TRANSLATION_TYPE', 'plugin'),
+		'enable' => env('APP_TRANSLATION_ENABLE', true),
 	],
 ];
