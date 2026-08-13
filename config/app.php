@@ -13,7 +13,7 @@ return [
 	],
 
 	'translation' => [
-		'type'   => 'theme', // theme o plugin, poi ti spiego
+		'type'   => 'plugin', // theme o plugin, poi ti spiego
 		'enable' => true
 	],
 ];
