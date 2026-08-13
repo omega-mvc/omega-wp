@@ -109,7 +109,7 @@ Currently demonstrated features:
 - Dependency injection container
 - Service providers
 - WordPress plugin lifecycle integration
-- Eloquent ORM support
+- ORM support
 - Routing system
 - Controllers
 - Validation layer
@@ -121,7 +121,7 @@ Omega WP Application depends on Omega WP Framework:
 
 omega-wp
     |
-    └── omega-mvc/wp-framework
+    └── omega-mvc/omega-wp-framework
 
 The framework provides the application foundation, while this repository contains the implementation examples and application-specific code.
 
