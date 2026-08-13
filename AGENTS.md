@@ -13,3 +13,23 @@
 3. Concentrate analysis and edits only on files within the authorized scope.
 4. **Filesystem:** Any file write, create, or delete (e.g. in tests) must use **native PHP filesystem functions**, never OS-specific commands (`touch`, `rm`, etc.), because Omega must stay compatible with Windows, Linux, and macOS.
 5. Do not take arbitrary actions or make decisions without discussing them with the user first.
+
+## How the app boots
+- Plugin entry point is `omega-wp.php`; it only loads Composer autoload and hooks `bootstrap/app.php` on `init` (nothing runs earlier).
+- `bootstrap/app.php` loads `.env` via `Env::load()` and returns an app built by `ApplicationFactory::createPlugin('omega-wp', ...)`. Config is resolved from `config/app.php` (`APP_ENV`, `APP_DEBUG`, admin menu/setup classes).
+- Service providers are declared in `config/providers.php` (currently `App\Providers\AppServiceProvider`); feature flags in `config/features.php`.
+- Routes live in `routes/` and are auto-loaded by the framework's `RouterServiceProvider`: `routes/api.php` (REST, under prefix `omega-wp/v1`, loaded on `rest_api_init`) and `routes/admin.php` (admin-page routes, loaded on `admin_menu`). Route files and controllers use `defined('ABSPATH') || exit;` guards - keep them.
+- Migrations use `Omega\Database` classes (`AbstractMigration`, `Schema`, `Blueprint`) under `database/migrations/`.
+
+## CLI and WordPress dependency
+- The `omega` executable is a Symfony Console app: it requires `wp-load.php` from the WordPress install four directories up (`dirname(__FILE__, 4)`), so it only runs inside a full WordPress installation (as in this workspace), not standalone.
+- Console commands are auto-discovered (see `app/Commands/`, currently empty, and the framework's `Console/Commands`).
+
+## Verification commands
+- **Lint:** `vendor/bin/phpcs --no-cache --standard=vendor/omega-mvc/omega-wp-framework/phpcs.xml.dist --extensions=php app bootstrap config routes database tests`
+  - The repo has **no** local `phpcs.xml`; the framework's ruleset (PSR12 + 120-char line limit) is the de-facto standard. Plain `vendor/bin/phpcs` (as the README claims) fails from this directory.
+  - The framework ruleset declares a cache path relative to the ruleset file; use `--no-cache` unless `vendor/omega-mvc/omega-wp-framework/cache/phpcs/` exists.
+  - Note: much of the committed app code currently fails this standard (tabs vs spaces). Match the existing file's style when editing, and keep new files PSR12-clean.
+- **Tests:** the app repo has **no** `phpunit.xml` and `tests/Tests/` is empty; `vendor/bin/phpunit` from this directory prints usage and exits. Only the framework package (`vendor/omega-mvc/omega-wp-framework/phpunit.xml.dist`) has a runnable PHPUnit 13 suite. Verify whether a task needs app tests before assuming they exist.
+- **Console smoke test:** `php omega list` (only works because WordPress is installed here).
+- Requirements: PHP >= 8.4 (`strict_types=1` in framework code), WordPress >= 6.0, `composer install` (creates `.env` from `.env.example`). `composer.lock` and `.env` are gitignored; never commit them.
