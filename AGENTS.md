@@ -32,6 +32,13 @@
 - Routes live in `routes/` and are auto-loaded by the framework's `RouterServiceProvider`: `routes/api.php` (REST, under prefix `omega-wp/v1`, loaded on `rest_api_init`) and `routes/admin.php` (admin-page routes, loaded on `admin_menu`). Route files and controllers use `defined('ABSPATH') || exit;` guards - keep them.
 - Migrations use `Omega\Database` classes (`AbstractMigration`, `Schema`, `Blueprint`) under `database/migrations/`.
 
+## Controller conventions
+- Controllers live under `app/Http/Controllers/`. Subdirectories define the responsibility domain (e.g. `Tasks/`, `Login/`).
+- Each controller handles a **single action** — one public method named `handle()`. There are no multi-method CRUD controllers.
+- Naming: the class is named after its action (`IndexController`, `StoreController`, `ShowController`, …).
+- Every controller extends `Omega\Routing\AbstractController`.
+- Route definitions reference the controller via `[IndexController::class, 'handle']`.
+
 ## CLI and WordPress dependency
 - The `omega` executable is a Symfony Console app: it requires `wp-load.php` from the WordPress install four directories up (`dirname(__FILE__, 4)`), so it only runs inside a full WordPress installation (as in this workspace), not standalone.
 - Console commands are auto-discovered (see `app/Commands/`, currently empty, and the framework's `Console/Commands`).
