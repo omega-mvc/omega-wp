@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers\Tasks;
 
-use Omega\Routing\AbstractController;
+use App\Http\Controllers\AbstractController;
 use Omega\View\Facade\View;
 
 defined( 'ABSPATH' ) || exit;
 
-class IndexController extends AbstractController {
-
+class IndexController extends AbstractController
+{
 	/**
 	 * Display a listing of the resource.
 	 */
