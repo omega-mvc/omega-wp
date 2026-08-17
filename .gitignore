@@ -4,3 +4,4 @@ composer.lock
 note
 /.idea
 .env
+REGISTER.md
