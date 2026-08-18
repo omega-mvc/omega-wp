@@ -20,6 +20,7 @@
 5. Do not take arbitrary actions or make decisions without discussing them with the user first.
 6. **PHPUnit coverage metadata:** With PHPUnit versions newer than 10.x, when testing traits, functions, or anything else that is not a plain class, the corresponding `Covers` attribute must be used (`#[CoversTrait]`, `#[CoversFunction]`, etc.), otherwise PHPUnit does not include the tested code unit in the coverage report. The `CoversFunction` target must use the fully-qualified namespaced name (e.g. `Omega\Application\slash`), not the bare function name.
 7. **`use function` imports:** In namespaced PHP files, every built-in function call must be imported with `use function` (e.g. `use function in_array;`). Without the import, PHP compiles it as a namespaced call with a runtime fallback, which Xdebug interprets as phantom branches — blocking 100% path coverage. This is a real gotcha in this codebase (see `REGISTER.md` issue 21).
+8. **Autoload regeneration:** Omega has **two** separate `vendor/` trees with independent autoloaders (app root + framework package). If a class is not found at runtime, **stop immediately** — do not debug further, do not run `composer dump-autoload` yourself. Instead, ask the user to regenerate autoloads. Only resume the task after the user confirms both autoloaders are regenerated. Running `composer dump-autoload` from the wrong directory, or only regenerating one, will create hard-to-diagnose breakage.
 
 ## Available system tools
 - `rg` (ripgrep) is installed and available for fast content search across the codebase.
